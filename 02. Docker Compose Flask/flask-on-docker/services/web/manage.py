@@ -1,6 +1,5 @@
-from flask.cli import FlaskGroup
-from project import server, db
-
+from flask.cli import FlaskGroup # type: ignore #ignore
+from project import server, db 
 
 cli = FlaskGroup(server)
 
@@ -11,4 +10,4 @@ def create_db():
     db.session.commit()
     
 if __name__ == "__main__":
-    cli()
+    cli() 

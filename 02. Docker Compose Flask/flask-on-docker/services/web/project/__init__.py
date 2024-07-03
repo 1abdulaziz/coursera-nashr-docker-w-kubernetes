@@ -1,7 +1,7 @@
 from flask import Flask # type: ignore # ignore the error, it's a bug in the linter
 from flask_sqlalchemy import SQLAlchemy # type: ignore # ignore the error, it's a bug in the linter
 server = Flask(__name__)
-server.config.from_object('project.config.Config')
+server.config.from_object('project.Config.Config')
 db = SQLAlchemy(server)
 
 class User(db.Model):
