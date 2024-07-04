@@ -1,0 +1,20 @@
+services:
+  web:
+    build: ./services/web
+    command: python manage.py run -h 0.0.0.0
+    ports:
+      - "5002:5000"
+    env_file:
+      - ./.env.dev
+    depends_on:
+      - db
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=blog
+      - POSTGRES_PASSWORD=blog
+      - POSTGRES_DB=blog_dev
+volumes:
+  postgres_data:
