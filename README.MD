@@ -13,6 +13,7 @@
 - kubecli
 - docker-composre
 - python3
+- ❯ sudo apt install gnupg2 pass
 
 
 # error

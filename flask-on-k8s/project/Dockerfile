@@ -11,5 +11,7 @@ RUN pip install -r requirements.txt
 COPY . /usr/src/app
 
 RUN apt-get update && apt-get install -y netcat
+
 ENTRYPOINT [ "sh", "./usr/src/app/entrypoint.sh" ]
+
 CMD [ "python", "manage.py", "run" , "--host=0.0.0.0"]
